@@ -1,0 +1,18 @@
+conversion_test()=
+{
+my(result = 0, x1 = 0, x2 = 0, x3 = 0, m1 = 3, m2 = 5, m3 = 7);
+
+for(i=0, 1000,
+
+x1 = random(m1);
+x2 = random(m2);
+x3 = random(m3);
+
+result = reverse_conversion(x1,x2,x3,m1,m2,m3);
+
+if( result % m1 != x1 && result % m2 != x2 && result % m3 != x3,
+return (false););
+);
+
+return (true);
+};

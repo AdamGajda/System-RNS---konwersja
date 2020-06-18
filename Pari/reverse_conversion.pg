@@ -1,0 +1,29 @@
+reverse_conversion(x1,x2,x3,m1,m2,m3)=
+{
+my(M=m1*m2*m3, x = [x1, x2, x3], m = [m1, m2, m3], SQ = 0, k = 0, De = 0, D = 0, ep = 0, X = 0);
+
+for(i=1, 3,
+SQ += floor(M/m[i]);
+);
+print("SQ = ", SQ);
+
+for(i=1, 3,
+print("################");
+print("i = ", i);
+k = (1/-m[i])% SQ;
+print("k = ", k);
+De += (k * x[i]);
+print("De = ", De);
+ep += (x[i] * (M/m[i]));
+print("ep = ", ep);
+print("################");
+);
+
+D = De % SQ;
+print("D = ", D);
+
+X = floor(((M * D) + ep) / SQ);
+
+return(X);
+
+};
